@@ -1,0 +1,389 @@
+.register {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(158, 119, 208, 0.26) 0%, rgba(158, 119, 208, 0.048) 50%, rgba(158, 119, 208, 0.26));
+    font-family: 'Montserrat', sans-serif;
+}
+
+.register input[type="range"] {
+    /* background-color: #ff6e40; */
+    -webkit-appearance: none;
+    width:15vw;
+    height: .3vh;
+    /* background: transparent; */
+    margin-block: 0.8vh;
+}
+
+.register input[type="range"]:focus {
+    outline: none;
+}
+
+.register input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1vw;
+    height:1vw;
+    border-radius: 50%;
+    margin-top: -.3vw;
+    margin-left: -.05vw;
+    background: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
+.register input[type="range"]::-webkit-slider-runnable-track {
+    height: .4vw;
+    background: #62626257;
+    border-radius: 3rem;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.register input[type="range"]::-ms-track {
+    width: 60%;
+    cursor: pointer;
+    height: 9px;
+    transition: all 0.5s;
+    /* Hides the slider so custom styles can be added */
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+.register .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.register .container .left {
+    width: 50%;
+    height: 100vh;
+}
+
+.register .container .left .panel-title {
+    font-family: 'Gloss And Bloom', sans-serif;
+    color: white;
+    margin: 0;
+    font-size: 4vh;
+    line-height: 5.1vh;
+    text-shadow: 0px 0px 20px #ffffff;
+    position: fixed;
+    top: 10vh;
+    left: 4vw;
+}
+
+.register .container .left .panel-desc {
+    color: rgb(234 234 234);
+    margin: 0;
+    font-size: 2vh;
+    width: 29.8vw;
+    font-weight: 300;
+    text-shadow: var(--text-shadow-b);
+    opacity: .9;
+    position: fixed;
+    top: 14.5vh;
+    left: 4vw;
+}
+
+.register .container .left .panel {
+    position: relative;
+    top: 22vh;
+    display: flex;
+    flex-direction: column;
+    width: 21.8vw;
+    left: 4vw;
+    justify-content: flex-start;
+    height: 60vh;
+    overflow: auto;
+    row-gap: 2vh;
+}
+
+.register .container .left .panel::-webkit-scrollbar {
+    width: .8vh;
+    border-radius: 1vw;
+}
+
+/* Track */
+.register .container .left .panel::-webkit-scrollbar-track {
+    background: #00000000;
+    border-radius: 1vw;
+
+}
+
+/* Handle */
+.register .container .left .panel::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 1vw;
+}
+
+.register .container .left .gender {
+    margin-top: 5vh !important;
+}
+
+.register .container .left .panel .input-card {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 20.8vw;
+}
+
+.register .container .left .panel .input-card h1{
+    margin-left: 0 !important;
+}
+
+.register .container .left .panel .input-card h2{
+    margin-left: 0 !important;
+    width: 19vw;
+}
+
+.register .container .left .panel .input-card .title {
+    margin-left: 3.5vw;
+    font-family: 'Gemunu Libre';
+    font-weight: 1000;
+    text-transform: uppercase;
+    font-size: 1.3vw;
+    letter-spacing: 0.2vw;
+    text-shadow: 0px 0px 0.8vh rgb(0 0 0 / 24%), 0px 0px 0.8vh rgb(0 0 0);
+}
+
+.register .container .left .panel .input-card .desc {
+    color: #b1b1b1;
+    margin-left: 3.5vw;
+    font-size: 1.4vh;
+    font-weight: 100;
+    font-family: 'Roboto';
+}
+
+.register .container .left .panel .input-card input {
+    width: 20.8vw;
+    position: relative;
+    top: 2vh;
+    outline: none;
+    border: none;
+    background-color: rgb(151 151 151 / 48%);
+    border-radius: 0.3vw;
+    color: white;
+    padding: 1vw;
+    font-family: 'Roboto Condensed';
+    font-size: 1.4vh;
+    text-shadow: 0 0 5px black;
+    filter: drop-shadow(2px 0px 10px black);
+}
+
+.register .container .left .panel .input-card i {
+    font-size: 1.7vw;
+    position: relative;
+    top: 3.9vh;
+    left: .5vw;
+}
+
+.register .container .left .panel .input-card .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: flex-start;
+    margin-top: 1vh;
+}
+
+.register .container .left .panel .input-card .buttons .gender-select:hover {
+    background-color: rgb(255 255 255);
+}
+
+.register .container .left .panel .input-card .buttons .selected {
+    background-color: rgb(255 255 255) !important;
+}
+
+.register .container .left .panel .input-card .buttons .gender-select {
+    border: 0;
+    outline: 0;
+    display: flex;
+    align-items: center;
+    padding-block: 1vh;
+    border-radius: 0.3vw;
+    background-color: rgb(255 255 255 / 30%);
+    width: 10vw;
+    justify-content: space-around;
+    transition: 0.3s linear;
+    filter: drop-shadow(2px 0px 10px black);
+}
+
+.register .container .left .panel .input-card .buttons .gender-select i {
+    font-size: 2.4vh;
+    position: unset;
+    top: 0;
+    left: 0;
+}
+
+.register .container .left .panel .input-card .buttons .gender-select .text {
+    font-family: 'Gemunu Libre';
+}
+
+.register .container .left .next-btn {
+    outline: none;
+    border: none;
+    padding-block: 1vh;
+    display: flex;
+    justify-content: center;
+    font-size: 1.8vh;
+    align-items: center;
+    background-color: rgb(158, 119, 208, 0.26);
+    color: white;
+    margin-top: 1vh;
+    border-radius: 0.3vw;
+    transition: .3s linear;
+    text-shadow: 0 0 13px white;
+    width: 20.8vw;
+    position: relative;
+    left: 4vw;
+    top: 23vh;
+}
+
+.register .container .left .next-btn:hover {
+    background-color: rgb(158, 119, 208, 0.479);
+}
+
+
+.register .container .left .back-btn {
+    outline: none;
+    border: none;
+    padding-block: 1vh;
+    display: flex;
+    justify-content: center;
+    font-size: 1.8vh;
+    align-items: center;
+    background-color: rgb(255 0 0 / 30%);
+    color: white;
+    margin-top: 1vh;
+    border-radius: 0.3vw;
+    transition: .3s linear;
+    text-shadow: 0 0 13px white;
+    width: 20.8vw;
+    position: relative;
+    left: 4vw;
+    top: 23vh;
+}
+
+.register .container .left .back-btn:hover {
+    background-color: rgb(255 0 0 / 50%);
+}
+
+.register .container .left .next-btn i {
+    margin-right:1vw;
+    font-size: 1.5vh;
+    margin-top: .2vh;
+}
+
+.register .container .left .back-btn i {
+    margin-right:1vw;
+    font-size: 1.5vh;
+    margin-top: .2vh;
+}
+
+.register .container .left .panel .selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    background-color: rgb(151 151 151 / 48%);
+    border-radius: .3vw;
+    padding-block: 1vh;
+    width: 20.8vw;
+}
+
+.register .container .left .panel .title {
+    font-size: 1.7vh;
+    font-family: 'Roboto';
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.5vh;
+}
+.register .container .left .panel .handle {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 20vw;
+    padding-inline: 1.5vh;
+}
+
+.register .container .left .panel .handle button {
+    border: 0;
+    outline: none;
+    padding: 0.6vh;
+    /* border-radius: 1vw; */
+    transition: .2s linear;
+    background-color: rgb(255 255 255 / 50%);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.register .container .left .panel .handle button:hover {
+    color: black;
+    background-color: rgb(255 255 255 / 60%)
+}
+
+.register .container .left .panel .handle button i {
+    font-size: 2vh;
+}
+
+.register .container .left .panel .handle .title {
+    font-size: 2vh;
+    text-transform: uppercase;
+    letter-spacing: 0.6vh;
+    padding-block: 0 !important;
+    font-weight: 1000;
+    text-shadow: 0 0 14px white;
+    font-family: 'Gemunu Libre';
+}
+
+.register .container .right {
+    text-align: right;
+    display: none;
+}
+.register .container .right .panel-title {
+    font-family: 'Gloss And Bloom', sans-serif;
+    color: white;
+    margin: 0;
+    font-size: 4vh;
+    line-height: 5.1vh;
+    text-shadow: 0px 0px 10px #9e77d0;
+    position: fixed;
+    top: 10vh;
+    right: 4vw;
+}
+.register .container .right .panel-desc {
+    color: rgb(234 234 234);
+    margin: 0;
+    font-size: 2vh;
+    width: 29.8vw;
+    font-weight: 300;
+    text-shadow: var(--text-shadow-b);
+    opacity: .9;
+    position: fixed;
+    top: 14.5vh;
+    right: 4vw;
+}
+.register .container .right .panel {
+    position: relative;
+    top: 22vh;
+    display: flex;
+    flex-direction: column;
+    width: 20.8vw;
+    left: 4vw;   
+}
+
+
+
+.errorOnRegistration {
+	display: none;
+	margin-top: 1vw;
+	font-weight: bolder;
+	font-size: 1.2vw;
+	text-shadow: #8f1a1a 1px 0 10px;
+	color: #8f1a1a;
+}

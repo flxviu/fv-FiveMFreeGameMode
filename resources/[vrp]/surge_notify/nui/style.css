@@ -1,0 +1,121 @@
+@keyframes admin {
+    from { top: -21vh; }
+    to { top: -1.8vh; }
+}
+
+.hud-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 100% 100%;
+    font-family: 'TT Norms';
+    user-select: none;
+}
+
+.hud-wrapper .right-top {
+    position: absolute;
+    top: 250px; /* Moved down from 200px to 250px */
+    right: 31px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.hud-wrapper .right-top .notifis-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    gap: 16px;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hud-wrapper .right-top .notifis-wrapper .notify {
+    position: relative;
+    width: 257px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: url(info.png);
+    background-size: 100% 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    animation: fade-in .3s ease-in-out;
+}
+
+.hud-wrapper .right-top .notifis-wrapper .notify.error {
+    background: url(error.png);
+}
+
+.hud-wrapper .right-top .notifis-wrapper .notify.success {
+    background: url(success.png);
+}
+
+.hud-wrapper .right-top .notifis-wrapper .notify::after {
+    position: absolute;
+    content: '';
+    width: 49px;
+    height: 4px;
+    border-radius: 3.5px;
+    bottom: -1px;
+    right: 28px;
+}
+
+.hud-wrapper .right-top .notifis-wrapper .notify.error::after {
+    background: #FE9B99;
+    box-shadow: 0 0 16.7px rgba(254, 155, 153, 0.35);
+}
+
+.hud-wrapper .right-top .notifis-wrapper .notify.success::after {
+    background: #B6FC88;
+    box-shadow: 0 0 16.7px rgba(182, 252, 136, 0.35);
+}
+
+.hud-wrapper .right-top .notifis-wrapper .notify.info::after {
+    background: #2b67c0;
+    box-shadow: 0 0 16.7px #2b67c0;
+}
+
+.hud-wrapper .right-top .notifis-wrapper .notify .title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 15px;
+}
+
+.hud-wrapper .right-top .notifis-wrapper .notify .title img {
+    width: 20px;
+}
+
+.hud-wrapper .right-top .notifis-wrapper .notify .title span {
+    color: #2b67c0;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12px;
+}
+
+.hud-wrapper .right-top .notifis-wrapper .notify.error .title span {
+    color: #FE9B99;
+}
+
+.hud-wrapper .right-top .notifis-wrapper .notify.success .title span {
+    color: #B6FC88;
+}
+
+.hud-wrapper .right-top .notifis-wrapper .notify .message {
+    color: #FFF;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.11px;
+    margin-left: 15px;
+}

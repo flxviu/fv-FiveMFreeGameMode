@@ -1,0 +1,332 @@
+.garages {
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    width: 100vw;
+    flex-wrap: wrap;
+    overflow: hidden;
+    font-family: 'font';
+    position: absolute;
+    background: linear-gradient(90deg, rgba(107, 233, 255, 0.212) 0%, rgba(107, 233, 255, 0.13) 50%, rgba(107, 233, 255, 0.212) 100%);
+    z-index: 1;
+    user-select: none;
+}
+
+.garages .line {
+    height: 0.2vh;
+    width: auto;
+    background: linear-gradient(90deg, rgb(255 255 255 / 70%) 0%, rgb(255 255 255 / 0%) 100%);
+    width: 20vw;
+    position: fixed;
+    top: 22vh;
+    left: 5vw;
+}
+
+.garages .line span {
+    z-index: 99999;
+    position: relative;
+    color: rgb(255 255 255 / 122%);
+    font-size: 0.5vh;
+    top: -1.025vh;
+    left: -0.3vw;
+}
+
+.garages .bg img {-webkit-user-drag: none;}
+
+.garages #garage {
+    /* filter: blur(4px); */
+    opacity: 0.5;
+    position: relative;
+    top: 62vh;
+    left: 69vw;
+    rotate: 4deg;
+    max-width: 50vw;
+    transform: rotateY(180deg)
+}
+
+.garages #logoDiscret {
+    /* filter: blur(4px); */
+    opacity: 0.5;
+    position: absolute;
+    top: 58vh;
+    left: -6vw;
+    scale: 2;
+    transform: rotate(347deg);
+}
+
+.garages .title {
+    font-family: 'Gloss And Bloom', sans-serif;
+    color: white;
+    margin: 0;
+    font-size: 4vh;
+    line-height: 5.1vh;
+    text-shadow: 0px 0px 20px #ffffff;
+    position: absolute;
+    top: 9vh;
+    left: 5vw;
+    z-index: 1;
+    text-align: left;
+}
+
+.garages .desc {
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        margin: 0;
+        font-size: 1.9vh;
+        text-shadow: 0px 0px 20px #ffffff;
+        position: absolute;
+        top: 15.3vh;
+        left: 5vw;
+        z-index: 1;
+        text-align: left;
+        font-weight: 300;
+        width: 21vw;
+        letter-spacing: 0.05vw;
+}
+
+.garages .title b {
+    font-family: 'Gloss And Bloom', sans-serif;
+    color: #77c3d0;
+    text-shadow: 0px 0px 20px #77c3d0;
+}
+
+.garages .container {
+    display: flex;
+    width: 21vw;
+    max-height: 59.3vh;
+    left: 5vw;
+    overflow: auto;
+    /* row-gap: 1.9vh; */
+    flex-direction: column;
+    flex-wrap: nowrap;
+    row-gap: 1.5vh;
+    outline: none;
+    align-items: flex-start;
+    position: absolute;
+    float: left;
+    top: 24vh;
+    vertical-align: top;
+}
+
+.garages .container .selected {
+    border: 1px solid rgb(107, 233, 255);
+    box-shadow: 0 0 7px rgba(107, 233, 255, 0.479);
+    background: rgba(107, 233, 255, 0.26);    
+}
+
+.garages .container .sale {
+    border: 1px solid rgb(0 255 0) !important;
+}
+.garages .container .sale:hover {
+    border: 1px solid rgb(0 255 0) !important;
+    box-shadow: 0 0 7px rgb(0 255 0 / 51%) !important;
+    background: rgb(0 255 0 / 8%) !important;   
+}
+
+.garages .container .favorite {
+    border: 1px solid rgb(255 255 0) !important;
+}
+.garages .container .favorite:hover {
+    border: 1px solid rgb(255 255 0) !important;
+    box-shadow: 0 0 7px rgb(255 255 0 / 51%) !important;
+    background: rgb(255 255 0 / 8%) !important;   
+}
+
+.garages .container .confiscated {
+    border: 1px solid rgb(255 0 0) !important;
+}
+.garages .container .confiscated:hover {
+    border: 1px solid rgb(255 0 0) !important;
+    box-shadow: 0 0 7px rgb(255 0 0 / 51%) !important;
+    background: rgb(255 0 0 / 8%) !important;   
+}
+
+.garages .container .row-card {
+    position: relative;
+    width: 19vw;
+    display: flex;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    transition: .3s linear;
+    border: 1px dotted white;
+}
+
+.garages .container .row-card:hover {
+    border: 1px solid rgb(255 255 255);
+    box-shadow: 0 0 7px rgb(255 255 255 / 51%);
+    background: rgb(255 255 255 / 8%);    
+}
+
+.garages .container::-webkit-scrollbar {
+    width: .25vw;
+    border-radius: 1vw;
+    transition: 0.2s;
+}
+
+.garages .container::-webkit-scrollbar-thumb {
+    background: rgb(255 255 255 / 100%);
+    border-radius: 1vw;
+}
+
+
+.garages .container .row-card .first-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4vw;
+}
+
+.garages .container .row-card .first-row i {
+    font-size: 3vh;
+    color: white;
+    text-shadow: 0 0 17px white;
+}
+.garages .container .row-card .second-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* padding-right: 3vw; */
+    width: 15vw;
+}
+.garages .container .row-card .second-row .car-title {color: white;font-family: 'Gemunu Libre';font-size: 1.8vh;text-shadow: 0 0 6px #ffffff7a;letter-spacing: .01vh;}
+.garages .container .row-card .second-row .id {
+    color: #77c3d0;
+    font-family: 'Gemunu Libre';
+    font-size: 1.4vh;
+    text-shadow: 0 0 6px #77c3d0;
+    letter-spacing: .1vh;
+}
+.garages .container .row-card .second-row .car-plate {
+    color: #b5b5b5;
+    font-family: 'Roboto';
+    font-size: 1.2vh;
+    text-shadow: 0 0 6px #b5b5b5;
+    letter-spacing: 0vh;
+}
+.garages .container .row-card .second-row .car-price {
+    color: #10ff00;
+    font-family: 'Roboto';
+    font-size: 1.2vh;
+    text-shadow: 0 0 6px #10ff00;
+    letter-spacing: 0vh;
+}
+
+.garages .park-vehicle {
+    position: absolute;
+    border: 1px solid white;
+    /* padding: 2vw; */
+    bottom: 6vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    left: 5vw;
+    display: flex;
+    width: 19vw;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    color: white;
+    text-shadow: 0 0 7px black;
+    transition: .3s linear;
+}
+
+.garages .park-vehicle:hover {
+    background-color: rgb(107, 233, 255, 0.479);
+    border: 1px solid rgb(107, 233, 255)
+}
+
+.garages .park-vehicle i {
+    font-size: 3vh;
+    width: 3vw;
+}
+.garages .park-vehicle h1 {
+    font-size: 3vh;
+    text-transform: uppercase;
+    font-family: 'Gemunu Libre';
+    letter-spacing: 0.3vw;
+}
+
+.garages .details {
+    position: absolute;
+    display: flex;
+    width: 20vw;
+    flex-direction: column;
+    align-items: flex-end;
+    right: 5vw;
+    top: 36vh;
+}
+
+.garages .details .vehicle-name{
+    color: white;
+    font-family: 'Gemunu Libre';
+    font-size: 4.1vh;
+    text-shadow: 0 0 6px #ffffff7a;
+    letter-spacing: .1vh;
+    text-align: right;
+}
+.garages .details .vehicle-name .id {
+    color: #77c3d0;
+    font-family: 'Gemunu Libre';
+    font-size: 3.4vh;
+    text-shadow: 0 0 6px #77c3d0;
+    letter-spacing: .1vh;
+}
+.garages .details .vehicle-plate{
+    color: #b5b5b5;
+    font-family: 'Roboto';
+    font-size: 2.2vh;
+    text-shadow: 0 0 6px #b5b5b5;
+    letter-spacing: 0vh;
+    font-weight: 100;
+}
+.garages .details .spawn-vehicle{
+    background: none;
+    outline: none;
+    border: none;
+    /* position: relative; */
+    top: 1vh;
+    background: linear-gradient(90deg, #048abd00 0%, #77c3d065 100%);
+    border-radius: 0.5vw;
+    opacity: .8;
+    color: white;
+    text-shadow: 0 0 20px white;
+    font-size: 2.3vh;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1vw;
+    transition: .3s linear;
+    filter: drop-shadow(2px 4px 6px #77c3d065);
+}
+
+.garages .details .extras {
+    color: white;
+    text-align: right;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    display: flex;
+    row-gap: .2vh;
+    /* height: 10.5vh; */
+    max-width: 17.5vw;
+    flex-direction: column;
+}
+.garages .details .extras h1 {
+    font-size: 1.7vh;
+    font-weight: 1000;
+    margin-bottom: 2vh;
+}
+.garages .details .extras h2 {
+    font-size: 1.4vh;
+    font-weight: 100;
+}
+.garages .details .extras .extra {}
+
+.garages .details .spawn-vehicle i{
+    padding-right: 1vw;
+    font-size: 2.5vh;
+}
+
+.garages .details .spawn-vehicle:hover{
+    padding-left: 5vw;
+    opacity: 1
+}

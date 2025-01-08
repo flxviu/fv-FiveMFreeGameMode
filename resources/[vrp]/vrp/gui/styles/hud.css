@@ -1,0 +1,275 @@
+/* Hud Top Right */
+/* body{
+  background: black;
+} */
+
+.hud-top-right {
+    position: absolute;
+    top:65px;
+    right: 92.5px;
+
+    display: flex;
+    flex-direction: row;
+
+    font-family: "Montserrat";  
+}
+
+.hud-top-right .hud-top-right-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.hud-top-right .hud-top-right-flex .server-texts {
+  display: flex;
+  flex-direction: column;
+}
+
+.hud-top-right .hud-top-right-flex .server-texts .server-hud{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.hud-top-right .announce {
+  width: 320px;
+  height: fit-content;
+  
+  padding-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 35px;
+
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+
+  margin-right: 60px;
+  margin-top: 5px;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Montserrat";
+}
+
+.hud-top-right .announce .header {
+  display: flex;
+  align-items: center;
+
+  margin-top: -5px;
+}
+
+.hud-top-right .announce .header > img {
+  align-self: flex-start;
+  margin-left: auto;
+  
+  width: 18px;
+  height: 17px;
+
+  opacity: .5;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hud-top-right .announce .header div {
+  height: 22px;
+  padding: 0 12px;
+  
+  margin-left: 10px;
+
+  background: #FFFFFF;
+  
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  font-variant-ligatures: none;
+  line-height: 12px;
+  
+  color: rgba(35, 35, 35, 0.85);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hud-top-right .announce .title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 14px;
+
+  color: #FFFFFF;
+
+  margin-left: 10px;
+  margin-top: 12px;
+
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hud-top-right .announce .description {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  font-variant-ligatures: none;
+  line-height: 18px;
+  word-break: break-all;
+
+  margin-top: 4px;
+  margin-left: 10px;
+  
+  color: rgba(255, 255, 255, 0.5);
+
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  font-family: "Montserrat";
+}
+
+.server-img{
+  position: absolute;
+
+  top: 20px;
+  right: 10px;
+
+  width: 80px;
+  height: 80px;
+}
+
+.hud-top-right .hud-top-right-flex .server-texts .server-hud > .data {
+  margin-left: 25px;
+  
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.hud-top-right .hud-top-right-flex .server-texts .server-hud .data > span{
+  font-weight: bold;
+}
+
+.hud-top-right .hud-top-right-flex .server-texts .server-hud .data i{
+  color: rgb(183, 128, 255);
+}
+
+.hud-top-right .hud-top-right-flex .server-texts .subtitle{
+  font-size: 16px;
+
+  letter-spacing: 2px;
+  
+  justify-self: flex-end;
+
+  margin-left: 1650.75px;
+  margin-top: -45px;
+}
+
+.hud-top-right .hud-top-right-flex .server-texts .subtitle > span{
+  color: rgb(183, 128, 255);
+}
+
+.server-hud-money{
+
+  position: absolute;
+  top:100px;
+  right: 50px;
+
+  display: flex;
+  flex-direction: row;
+
+  font-family: "Montserrat"; 
+}
+
+.server-hud-money .server-texts{
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  margin-left: 10px;
+}
+
+.server-hud-money .server-texts .data{
+  margin-top: 5px;
+
+  font-weight: 500;
+  font-size: 17.5px;
+}
+
+.server-hud-money .server-texts .data i{  
+  margin-left: 5px;
+  color: rgb(183, 128, 255);
+}
+
+.server-hud-money .server-texts .data:last-of-type{
+  margin-right: 1.25px;
+}
+
+
+
+/* Hud Bottom Right */
+.hud-bottom-right {
+    position: absolute;
+    bottom: 30px;
+    right: 25px;
+
+    display: flex;
+
+    font-family: "Montserrat";
+}
+
+.hud-bottom-right .hud-bottom-right-flex {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.hud-bottom-right-flex .binds-list {    
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    margin-right: 300px;
+
+    gap: 15px;
+}
+
+.hud-bottom-right-flex .binds-list .bind {
+    display: flex;
+    align-items: center;
+
+    font-style: normal;
+
+    animation: fadeIn .5s;
+}
+
+.hud-bottom-right-flex .binds-list .bind > div {
+    background: #ffffff20;
+	
+    font-weight: 500;
+    font-size: 14px;
+	
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+	padding-left: .8vw;
+	padding-right: .8vw;
+	height: 2vw;
+
+    margin-right: 10px;
+}
+
+.hud-minimap > .hud-other {
+	position: absolute;
+	right: 27.5px;
+	top: 75px;
+	
+  display: flex;
+  flex-direction: row;
+
+  font-family: "Montserrat";  
+}
+
+.hud-minimap {
+  display: flex;
+  flex-direction: column;
+}

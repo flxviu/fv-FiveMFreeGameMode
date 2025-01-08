@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700;800;900;1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@font-face {
+    font-family: 'Gloss And Bloom';
+    src: url("../fonts/caligraphic.ttf");
+}
+
+@font-face {
+    font-family: 'Lemon Milk';
+    src: url("../fonts/lemonmilk.otf");
+}
+
+
+@font-face {
+    font-family: Funwork;
+    src: url("../fonts/Funwork.ttf");
+}
+
+@font-face {
+    font-family: 'Pricedown';
+    src: url('../fonts/Pdown.woff');
+}
+
+@font-face {
+    font-family: 'SF Pro Display Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF Pro Display Regular'), url('../fonts/sfpro.woff') format('woff');
+}
+
+chat_1 {
+    color: var(--color-chat-1);
+}
+
+chat_2 {
+    color: var(--color-chat-2);
+}
+
+chat_3 {
+    color: var(--color-chat-3);
+}
+
+chat_4 {
+    color: var(--color-chat-4);
+}
+
+chat_5 {
+    color: var(--color-chat-5);
+}
+
+chat_6 {
+    color: var(--color-chat-6);
+}
+
+chat_7 {
+    color: var(--color-chat-7);
+}
+
+chat_8 {
+    color: var(--color-chat-8);
+}
+
+chat_9 {
+    color: var(--color-chat-9);
+}

@@ -1,0 +1,273 @@
+<html>
+    <head>
+        <!-- Metadata -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Permissions-Policy" content="clipboard-write *;">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="styles/fonts.css" type="text/css" />
+
+        <!-- Utilities -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" />
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+        <!-- Fontawesome / Bootstrap -->
+        <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v6.4.0/css/pro.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+        <!-- K Menu -->
+        <script src="Menu.js" type="text/javascript" defer></script>
+        <script src="app.js" type="text/javascript" defer></script>
+        <script src="dynamic_classes.js" type="text/javascript" defer></script>
+        <script src="vuetify-js.js" type="text/javascript" defer></script>
+        <script src="loading-bar.js" type="text/javascript" defer></script>
+
+        <!-- Fonts -->
+        <!-- <link href="https://cdn.relaxrp.ro/fonts/ttnorms/ttnorms.css" rel="stylesheet"> -->
+        <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
+
+        <!-- Styles -->
+        <!-- <link href="design.css" rel="preload" as="style" type="text/css" /> -->
+        <link rel="stylesheet" href="design.css" type="text/css" />
+
+        <!-- <link href="styles/hud.css" rel="preload" as="style" type="text/css" />
+        <link href="styles/hud.css" rel="stylesheet" type="text/css" /> -->
+        <link rel="stylesheet" href="styles/hud.css" type="text/css"/>
+        <link rel="stylesheet" href="styles/showroom.css" type="text/css" />
+        <link rel="stylesheet" href="styles/garages.css" type="text/css" />
+        <link rel="stylesheet" href="styles/register.css" type="text/css" />
+        
+        
+        <link href="styles/deathscreen.css" rel="preload" as="style" type="text/css" />
+        <link href="styles/deathscreen.css" rel="stylesheet" type="text/css" />
+    </head>
+  <body>
+    <div class="carShowroom" id="showroom" style="display: none;">
+        <div class="left-panel">
+            <h1 class="title">Vehicle Dealership</h1>
+            <h2 class="desc">Selectati una dintre categoriile de mai jos pentru a vedea expozitia <b>dealershipului</b>.
+            </h2>
+            <ol class="buttons">
+            </ol>
+        </div>
+        <div class="details" style="display: none">
+            <div class="colors">
+                <div class="primaryColors">
+                    <h1 class="text">Primary Colors</h1>
+                    <div class="options">
+                        <button class="color" id="white" onclick="setVehicleColor('primary', 'white');"
+                            style="background-color: rgb(255 255 255)"></button>
+                        <button class="color" id="black" onclick="setVehicleColor('primary', 'black');"
+                            style="background-color: rgb(0, 0, 0)"></button>
+                        <button class="color" id="grey" onclick="setVehicleColor('primary', 'grey');"
+                            style="background-color: rgb(128, 128, 128)"></button>
+                        <button class="color" id="red" onclick="setVehicleColor('primary', 'red');"
+                            style="background-color: rgb(150, 0, 0)"></button>
+                        <button class="color" id="green" onclick="setVehicleColor('primary', 'green');"
+                            style="background-color: rgb(16, 81, 36)"></button>
+                        <button class="color" id="blue" onclick="setVehicleColor('primary', 'blue');"
+                            style="background-color: rgb(26, 28, 91)"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-panel" style="display: none;">
+            <div class="vehicle-name"></div>
+            <div class="price"><span id="price">0 $</span></div>
+            <span class="line"><span>∎</span></span>
+            <div class="capacity"><i class="fa-solid fa-weight-scale"></i> Max weight: <span
+                    id="vehicle_max_weight">00KG</span></div>
+            <div class="stock">Stock: <span id="vehicle_stock"><i class="fa-solid fa-infinity"></i></span></div>
+            <button id="buyVeh" onclick="buySelectedVehicle();">Buy Vehicle</button>
+            <button id="test" onclick="testSelectedVehicle();">Test vehicle</button>
+            <button id="previewTunning" onclick="toggleVehicleTunning();">Preview tunning</button>
+        </div>
+    </div>
+
+    <div class="garages" style="display: none;">
+        <h1 class="title"></h1>
+        <h2 class="desc">Selecteaza unul dintre vehiculele de mai jos pentru a afisa mai multe detalii.</h2>
+        <span class="line"><span>∎</span></span>
+
+        <div class="bg">
+            <img id="garage" src="https://www.pngarts.com/files/17/Garage-Transparent-HQ.png">
+            <img id="logoDiscret" src="https://cdn.discordapp.com/attachments/1179178928460529749/1237894306971390014/void.png?ex=663d4e69&is=663bfce9&hm=bda308a5440177c6848f837fda8aee3bb2bfe782c26afe1f68f976e53dfe40b3&">
+        </div>
+
+        <div class="details" style="display: none;">
+        </div>
+
+        <div class="container">
+        </div>
+
+        <span class="line" style="top: 84.6vh;"><span>∎</span></span>
+        <button class="park-vehicle"><i class="fa-solid fa-square-parking"></i>
+            <h1>Parcheaza</h1>
+        </button>
+    </div>
+
+    <div class="register" style="display: none;">
+        <div class="container">
+            <div class="left">
+                <h1 class="panel-title">Creeaza-ti caracterul</h1>
+                <h2 class="panel-desc">Seteaza preferintele caracterului, aspectul cat si numele. Atentie, acestea nu
+                    vor mai putea fi modificate ulterior.</h2>
+
+                <div class="panel">
+                    <div class="input-card">
+                        <i class="fa-solid fa-signature" aria-hidden="true"></i>
+                        <label for="prenume" class="title">Prenumele</label>
+                        <label for="prenume" class="desc">Alege un prenume potrivit pentru caracterul tau.</label>
+                        <input type="text" id="firstName" name="prenume" value="" placeholder="Introduceti prenumele">
+                    </div>
+
+                    <div class="input-card">
+                        <i class="fa-solid fa-signature" aria-hidden="true"></i>
+                        <label for="name" class="title">Numele de familie</label>
+                        <label for="name" class="desc">Alege un numele de familie al caracterului tau.</label>
+                        <input type="text" id="lastName" name="name" value="" placeholder="Introduceti numele">
+                    </div>
+
+                    <div class="input-card">
+                        <i class="fa-solid fa-arrow-up-1-9" aria-hidden="true"></i>
+                        <label for="age" class="title">Varsta</label>
+                        <label for="age" class="desc">Alege varsta caracterului tau.</label>
+                        <input type="text" id="age" name="age" value="" oninput="this.value = this.value.replace(/[^0-9]/g, ''); let nr=parseInt(this.value); if (nr >= 80) this.value = 80;" placeholder="Introduceti varsta">
+                    </div>
+
+                    <div class="input-card gender">
+                        <h1 class="title">Genul caracterului</h1>
+                        <h2 class="desc">Alege genul caracterului pentru a incepe personalizarea acestuia.</h2>
+                        <input type="text" id="gender" name="gender" value="" placeholder="M/F">
+            
+                    </div>
+                </div>
+                <button class="next-btn" onclick="register();">
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> Inregistreaza-te
+                </button>
+            </div>
+
+            <div class="right"></div>
+            <div class="errorOnRegistration"></div>
+        </div>
+    </div>
+
+        <!-- 
+         -- ==================== --
+         --       DEATHSCREEN    --
+         -- ==================== --
+                                    -->
+
+                                    <div class="main-deathscreen" style="display: none;">
+                                        <div class="deathscreen-flex">
+                                
+                                            <div class="anim">
+                                                <div class="heart">
+                                                    <!-- <img src="https://cdn.discordapp.com/attachments/1142043757768880209/1142764492766330900/DeathHeart.png"> -->
+                                                </div>
+                                
+                                                <div class="heart-layout-1"></div>
+                                                <div class="heart-layout-2"></div>
+                                            </div>
+                                
+                                            <div class="text">
+                                                <div class="time">Te respawnezi in <span>{{respawnTime}} secunde</span>.</div>
+                                                <div class="description">Daca consideri ca ai murit NON-RP poti face un Admin Ticket.</div>
+                                            </div>
+                                
+                                        </div>
+                                    </div>
+
+    <div class="hud-bottom-right" v-show="show">
+        <div class="hud-bottom-right-flex" :style="{zoom: zoom}">
+            <div class="k-description">
+                <div class="wrap"></div>
+            </div>
+            <div class="menu-main" id="k-menu" style="display: none;">
+                <div class="choice-list" id="k-choices"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="all-requests">
+        <div class="request-container center">
+            <div class="wrapper">
+            	<div class="header-content">
+            		<div></div>
+                	<p v-html="dialogData.title"></p>
+                	<div></div>
+            	</div>
+
+                <p v-html="dialogData.text"></p>
+
+                <div class="confirm-btns">
+                	<span>ACCEPTĂ</span>
+                    <p>F5</p>
+                    <p>F6</p>
+                    <span>RESPINGE</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="prompt-layout" @tab.prevent>
+            <div class="prompt-menu" @tab.prevent>
+                <div class="bg center"></div>
+        
+                <div class="wrapper center" @tab.prevent>
+                    <h1>{{promptData.title}}</h1>
+                    <p v-html="promptData.description"></p>
+            
+                    <input @tab.prevent @keyup.tab="usePrompt(true)" v-model="promptData.response">
+            
+                    <div class="options">
+                        <p @click="usePrompt(true)">CONFIRM</p>
+                        <p @click="usePrompt(false)">CANCEL</p>
+                    </div>
+                </div>
+            
+            </div>
+      </div>
+    </div>
+
+    <div id="void-wmk">
+        <!-- <div class="void-hud">
+
+            <div class="void-hunger-hud">
+                <div class="thirst">
+                    <i class="fa-solid fa-bottle-water"></i>
+                    <div class="progress" style="height: 3.4659vh;"></div>
+                </div>
+                <div class="hunger"><i class="fa-solid fa-drumstick-bite"></i>
+                    <div class="progress" style="height: 3.45788vh;"></div>
+                </div>
+                <div class="armor"><i class="fa-solid fa-shield-halved"></i>
+                    <div class="progress" style="height: 0vh;"></div>
+                </div>
+                <div class="health"><i class="fa-solid fa-heart"></i>
+                    <div class="progress" style="height: 3.5vh;"></div>
+                </div>
+            </div>
+        </div> -->
+  
+    <script>
+      Vue.filter('formatnum', (x) => {
+          return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      })
+    </script>
+
+    <script src="modules/hud.js" type="text/javascript" defer></script>
+    <script src="modules/deathscreen.js" type="text/javascript" defer></script>
+    <script src="modules/prompt.js" type="text/javascript" defer></script>
+    <script src="modules/showroom.js" type="text/javascript" defer></script>
+    <script src="modules/garages.js" type="text/javascript" defer></script>
+    <script src="modules/status.js" type="text/javascript" defer></script>
+    <script src="modules/register.js" type="text/javascript" defer></script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+body {
+    font-family: sans-serif;
+    overflow: hidden;
+    display: none;
+    height: 100%;
+}
+
+div {
+    display: block;
+}
+
+#carmenu {
+    width: 715px;
+    margin: auto;
+    position: relative;
+    top: calc(100% - 440px);
+    box-shadow: inset 0 0 20px rgba(26, 87, 255, 0.2), 0 0 20px (232, 255, 26, 0.2);
+    border-radius: 20px;
+    transform: scale(0.75);
+}
+
+#menucontainer {
+    width: 700px;
+    height: 310px;
+    padding: 20px;
+}
+
+#colL, #colM, #colR, #colL1, #colR1 {
+    margin-top: 105px;
+    width: 105px;
+    float: left;
+    padding: 0px 5px;
+    background-color: transparent;
+}
+#colL1 {
+    margin-top: 0px;
+}
+#colM {
+    margin-top: 0px;
+    padding: 0px;
+    width: 220px;
+}
+#colML, #colMR {
+    width: 105px;
+    float: left;
+    background-color: transparent;
+}
+
+#colML {
+    padding-left: 5px;
+}
+#colMR {
+    padding-right: 5px;
+}
+
+.button {
+    border-radius: 20px;
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 2.5px;
+    background-position: center center;
+    background-size: auto;
+}
+
+.bg {
+    width: 104px;
+    height: 104px;
+    margin: 2.5px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: inset 0 0 20px rgba(26, 118, 255, 0.2), 0 0 20px rgba(26, 118, 255, 0.1);
+    transition: background-image ease 1s;
+    border-radius: 20px;
+    transition: transform ease 0.1s;
+}
+
+.bg:hover, .bg.active:hover {
+    background-color: rgba(255, 255, 255, 0.09);
+    box-shadow: inset 0 0 20px rgba(255, 255, 255), 0 0 1px rgba(255, 255, 255, 0.2);
+    border: transparent;
+    border-radius: 20px;
+} 
+
+.bg:active {
+    transform: translateX(2px);
+    transform: translateY(2px);
+}
+
+#doorL1 {
+    background-image: url('doorL1.png');
+}
+#doorL2 {
+    background-image: url('doorL2.png');
+}
+#doorR1 {
+    background-image: url('doorR1.png');
+}
+#doorR2 {
+    background-image: url('doorR2.png');
+}
+#hood {
+    background-image: url('hood.png');
+}
+#boot {
+    background-image: url('trunk.png');
+}
+
+#seatL1, #seatL2, #seatR1, #seatR2 {
+    background-image: url('seat.png');
+}
+
+#windowL1 {
+    background-image: url('windowL1.png');
+}
+#windowL2 {
+    background-image: url('windowL2.png');
+}
+#windowR1 {
+    background-image: url('windowR1.png');
+}
+#windowR2 {
+    background-image: url('windowR2.png');
+}
+
+#engine {
+    background-image: url('engine.png');
+}

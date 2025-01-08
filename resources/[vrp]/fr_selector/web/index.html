@@ -1,0 +1,30 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	<script src="./js/lib/vue.js"></script>
+</head>
+<body style="background: none">
+	<div v-if="active" id="defselector">
+		<div class="npc" v-cloak>
+			<div class="allbottom">
+				<a>{{numele_npcului}}</a>
+				<p>{{rolul_npcului}}</p>
+				<div class="textblock">
+					<div class="textblock__text">
+						{{text_npc}}
+					</div>
+				</div>
+				<div class="answerbtns">
+					<div v-for="(item, index) in tableNpc[idMeniu]" @click="postInClient(item.Event)" v-if="item.Text != null" class="btn">
+						{{item.Text}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="./js/lib/jquery-3.2.1.min.js"></script>
+	<script src="./js/index.js"></script>
+</body>
+</html>

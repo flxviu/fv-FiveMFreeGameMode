@@ -1,0 +1,249 @@
+.color-0{color: rgb(255, 255, 255);}
+.color-1{color: #DF3232;} /* ROSU */
+.color-2{color: #99cc00;}
+.color-3{color: #e7c500;} 
+.color-4{color: #0127fd;}
+.color-5{color: #00aeff;}
+.color-6{color: #aa66cc;}
+.color-7{color: #ffffff;}
+.color-8{color: #ff8e24;}
+.color-9{color: #888080;}
+
+
+
+@keyframes textclip {
+    to {background-position: 200% center;}
+}
+
+@-webkit-keyframes rainbow{
+  0%{color: #807afe;}
+  10%{color:#b57afe;} 
+  20%{color: #807afe;}
+  40%{color:#b57afe;}
+  60%{color: #807afe;}
+  100%{color: #b57afe;}
+}
+
+
+/* Standar Syntax */
+@keyframes rainbow{
+  0%{color: #807afe;}
+  10%{color:#b57afe;} 
+  20%{color: #807afe;}
+  40%{color:#b57afe;}
+  60%{color: #807afe;}
+  100%{color: #b57afe;}
+}
+
+
+
+@font-face {
+    font-family: 'Font2'; 
+    src: url('fontcustom.woff');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100&display=swap');
+
+* {
+  /*font-family: 'Font2';*/
+  font-family: Font2;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* .no-grow {
+  flex-grow: 10;
+} */
+
+em {
+  font-style: normal;
+}
+
+#app {
+  font-family: Font2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+}
+
+.chat-window {
+  position: absolute;
+  top: 21px;
+  left: 18px;
+  width: 43%;
+  height: 200px;
+  background-color: rgb(0 0 0 / 42%);
+  -webkit-animation-duration: 2s;
+  
+}
+
+
+.chat-messages {
+  position: relative;
+  height: 130%;
+  color: #ffffff;
+  font-size: 16px;
+  text-shadow: 0px 0px 0.8vh rgb(0 0 0), 0px 0px 0.8vh rgb(0 0 0 / 68%);
+  line-height: 90%;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  animation: fadein 0.2s;
+  overflow-x: auto;
+  overflow-y: auto;
+  text-align: left;
+  direction:rtl;
+  cursor: crosshair;
+/*   transform: rotate(180deg); */
+}
+/* .chat-messages {
+	position: fixed;
+	width: 100%;
+	height: 96.8%;
+	overflow: auto;
+} */
+.chat-messages::-webkit-scrollbar {
+	width: 3px;
+	border-radius: 10px;
+}
+  
+  /* Track */
+  .chat-messages::-webkit-scrollbar-track {
+
+    background: rgb(0,0,0, .2);
+    border-radius: 20px;
+  }
+     
+    /* Handle */
+  .chat-messages::-webkit-scrollbar-thumb {
+      border-radius: 1120px;
+    background: #24272d;
+  }
+    
+    /* Handle on hover */
+  .chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #24272d;
+    border-radius: 1110px;
+  }
+  
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.chat-input {
+  font-size: 1.2rem;
+  position: absolute;
+  animation: fadein 1.2s;
+
+  top: 352px;
+  left: 15px;
+  width: 38%;
+  cursor: all-scroll; 
+  box-sizing: border-box;
+}
+
+.rpchat {
+  font-size: 15px;
+  position: absolute;
+  animation: fadein 1.2s;
+  padding: 10px;
+  font-weight: 800;
+  padding-left: 21px;
+  padding-right: 21px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  top: -82.2%;
+  left: 0%;
+  border-radius: 3px;
+  color: #060606;
+  text-decoration: none;
+  background-color: #ffef34;
+  box-shadow: inset 1px 1px 10px #fdfd71,
+   0px 0px 9px #eada4e;
+  box-sizing: border-box;
+}
+
+.prefix {
+  position: absolute;
+  top: 7px;
+  font-size: 22px;
+  left: 75%;
+  color: #ffffff;
+}
+
+/* --- */
+
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(-30deg, #291f3a,  rgb(35 53 107 / 91%));
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+textarea {
+  font-size: 1.1rem;
+  display: block;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  line-height: 1;
+  color: white;
+  background-color: rgba(42, 40, 42, 0.5);
+  width: 80%;
+  border-radius: 3px;
+  border: none;
+  overflow: hidden;
+}
+
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+.msg {
+  margin-bottom: 17px;
+  animation: fadein 0.2s;
+  direction: ltr;
+  padding-left: 15px;
+}
+
+.multiline {
+  margin-left: 1.5rem;
+  text-indent: -1.5rem;
+  white-space: pre-line;
+}
+
+.suggestions {
+  list-style-type: none;
+  padding: 5px;
+  padding-left: 27px;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.0);
+  width: 100%;
+}
+
+.help {
+  color: #b0bbbd;
+}
+
+.disabled {
+  color: #b0bbbd;
+}
+
+.suggestion {
+  margin-bottom: 5px;
+}

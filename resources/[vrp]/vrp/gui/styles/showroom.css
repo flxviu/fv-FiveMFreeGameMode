@@ -1,0 +1,377 @@
+.carShowroom {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(158, 119, 208, 0.212) 0%, rgba(158, 119, 208, 0.13) 50%, rgba(158, 119, 208, 0.212) 100%);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.carShowroom .left-panel {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding-left: 4.5vw;
+    padding-top: 17.5vh;
+}
+
+.carShowroom .left-panel .title {
+    font-family: 'Gloss And Bloom', sans-serif;
+    color: white;
+    margin: 0;
+    font-size: 4vh;
+    line-height: 5.1vh;
+    text-shadow: 0px 0px 20px #FFFFFF;
+}
+
+.carShowroom .left-panel .desc {
+    color: rgb(234 234 234);
+    margin: 0;
+    padding-bottom: 3vh;
+    font-size: 2vh;
+    width: 23.8vw;
+    font-weight: 300;
+    text-shadow: var(--text-shadow-b);
+    opacity: .9;
+}
+
+.carShowroom .left-panel .buttons {
+    display: flex;
+    list-style: none;
+    overflow-x: auto;
+    position: relative;
+    width: 23.4vw;
+    height: 40vh;
+    direction: rtl;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    flex-wrap: nowrap;
+}
+
+.carShowroom .left-panel .buttons li {
+    margin-bottom: 0.3vh;
+}
+
+.carShowroom .left-panel .buttons li:hover {
+    background-color: transparent !important;
+}
+
+.carShowroom .left-panel .buttons::-webkit-scrollbar {
+    width: .8vh;
+    border-radius: 1vw;
+}
+
+/* Track */
+.carShowroom .left-panel .buttons::-webkit-scrollbar-track {
+    background: #00000000;
+    border-radius: 1vw;
+
+}
+
+/* Handle */
+.carShowroom .left-panel .buttons::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 1vw;
+}
+
+.carShowroom .left-panel .buttons .selected {
+    background-color: rgba(158, 119, 208, 0.479) !important;
+}
+
+.carShowroom .left-panel .buttons .button {
+    background-color: rgb(0 0 0 / 30%);
+    border-radius: .2vw;
+    transition: .3s linear;
+    outline: none;
+    border: none;
+    width: 22.6vw;
+    margin: 0;
+    margin-bottom: 0.3vh;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.carShowroom .left-panel .buttons .button:hover {
+    background-color: rgb(158, 119, 208, 0.479)
+}
+
+.carShowroom .left-panel .buttons .button .name {
+    margin: 0;
+    font-size: 1.7vh;
+    color: white;
+    font-weight: 100;
+    padding-top: 1.3vh;
+    padding-bottom: 1.3vh;
+    padding-left: 1.3vw;
+    text-align: left;
+    font-family: 'Roboto Condensed';
+}
+
+.carShowroom .left-panel .buttons .button .price {
+    margin: 0;
+    position: relative;
+    font-size: 1.5vh;
+    color: rgb(76 255 76);
+    font-family: 'Roboto Condensed';
+    font-weight: 100;
+    padding-top: 1.5vh;
+    padding-bottom: 1vh;
+    padding-right: 1vw;
+    text-align: right;
+    direction: ltr;
+    /* top: -4.5vh; */
+    text-shadow: var(--text-shadow-b);
+}
+
+.carShowroom .left-panel .controls {
+    position: relative;
+    top: 5vh;
+    opacity: .2;
+}
+
+.carShowroom .left-panel .controls .key {
+    display: flex;
+    font-size: 2.5vh;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-top: 1.1vh;
+}
+
+.carShowroom .left-panel .controls .key h1 {
+    color: white;
+    margin-top: 2.3vh;
+    font-size: 2.5vh;
+    margin: 0;
+}
+
+.carShowroom .left-panel .controls .key span {
+    color: white;
+}
+
+.carShowroom .left-panel .bordered {
+    border: 1px solid grey;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.carShowroom .details {
+    z-index: 99;
+}
+
+.carShowroom .details .primaryColors {
+    float: left;
+    text-align: center;
+    padding-right: 2vw;
+}
+
+.carShowroom .details .secondaryColors {
+    float: right;
+    text-align: right;
+    padding-left: 2vw;
+}
+
+.carShowroom .details .text {
+    font-size: 2.1vh;
+    margin: 0;
+    color: white;
+    font-weight: 100;
+    letter-spacing: 1.3vh;
+    padding-bottom: 3vh;
+    padding-top: 3vh;
+}
+
+.carShowroom .details .colors {
+    display: flex;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    justify-content: space-between;
+    top: 8vh;
+    left: 50.7%;
+}
+
+.carShowroom .details .options {
+    margin-top: 0;
+}
+
+.carShowroom .details .options .color {
+    margin: 0;
+    padding: 0;
+    width: 2vw;
+    height: 2vw;
+    border: none;
+    border: .1px solid white;
+    opacity: .5;
+    border-radius: 0.15vw;
+    transition: .3s linear
+}
+
+.carShowroom .details .options .color:hover {
+    opacity: 1.0
+}
+
+.carShowroom .right-panel {
+    display: flex;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    justify-content: space-between;
+    top: 51%;
+    right: -4vw;
+    flex-direction: column;
+    direction: rtl;
+}
+
+.carShowroom .right-panel .vehicle-name {
+    color: rgb(255 255 255);
+    font-size: 2.6vh;
+    text-shadow: 0px 0px 3px #ffffff;
+    font-weight: 1000;
+}
+
+.carShowroom .right-panel .price {
+    color: var(--color-cash);
+    font-size: 2.9vh;
+    text-align: right;
+    direction: ltr;
+}
+
+.carShowroom .right-panel .line {
+    height: 0.3vh;
+    width: auto;
+    background: linear-gradient(90deg, rgba(0, 91, 186, 0) 0%, rgba(255, 255, 255, .7) 100%);
+    margin-top: 2.2vh;
+    margin-bottom: 1vh;
+}
+
+.carShowroom .right-panel #vehicle_max_weight {
+    color: var(--card-color);
+}
+
+.carShowroom .right-panel .capacity i {
+    color: var(--card-color);
+}
+
+.carShowroom .right-panel .capacity {
+    margin-top: 1vh;
+    color: white;
+    font-size: 1.8vh;
+    text-shadow: var(--text-shadow-b);
+}
+
+.carShowroom .right-panel .stock i {
+    color: var(--color-chat-8);
+}
+
+.carShowroom .right-panel .stock {
+    margin-top: .5vh;
+    color: white;
+    font-size: 1.8vh;
+    text-shadow: var(--text-shadow-b);
+    direction: ltr;
+    text-align: right;
+}
+
+.carShowroom .right-panel .line span {
+    z-index: 99999;
+    position: relative;
+    color: rgb(255 255 255 / 122%);
+    font-size: 1.5vh;
+    top: -1vh;
+    left: 0.1vw;
+}
+
+.carShowroom .right-panel .line::after {
+    direction: ltr !important;
+    width: 1vh;
+    height: 1vh;
+    background-color:
+        rgb(255 255 255);
+}
+
+.carShowroom .right-panel .max_weight {
+    color: white;
+    font-size: 1.8vh;
+    text-align: right;
+    direction: ltr;
+}
+
+.carShowroom .right-panel .max_weight_nr {
+    color: var(--color-danger);
+    font-size: 1.8vh;
+    text-align: right;
+    direction: ltr;
+}
+
+.carShowroom .right-panel #buyVeh {
+    padding-top: 1.2vw;
+    padding-bottom: 1.2vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    margin-top: 2vw;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background-color: rgb(0 0 0 / 30%);
+    color: white;
+    font-size: 2.6vh;
+    font-family: 'Gemunu Libre';
+    font-weight: 600;
+    letter-spacing: 0.3vh;
+    transition: .3s linear;
+    border: 1px solid rgb(200 200 200);
+    opacity: .6;
+}
+
+.carShowroom .right-panel #buyVeh:hover {
+    /*     border: 1px solid var(--color-cash); */
+    background: rgb(95 186 95 / 30%);
+    opacity: 1
+}
+
+.carShowroom .right-panel #previewTunning {
+    padding-top: 0.3vw;
+    padding-bottom: 0.3vw;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    margin-top: 1vh;
+    background-color: rgb(0 0 0 / 30%);
+    color: white;
+    font-size: 1.8vh;
+    font-family: 'Gemunu Libre';
+    letter-spacing: 0.2vh;
+    font-weight: 300;
+    transition: .3s linear;
+    border: 1px solid rgb(200 200 200);
+    opacity: .6;
+}
+
+.carShowroom .right-panel #previewTunning:hover {
+    background: rgb(0 100 145 / 30%);
+    opacity: 1
+}
+
+.carShowroom .right-panel #test {
+    padding-top: 0.4vw;
+    padding-bottom: 0.4vw;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    margin-top: 1vh;
+    background-color: rgb(0 0 0 / 30%);
+    color: white;
+    font-size: 2.1vh;
+    font-family: 'Gemunu Libre';
+    letter-spacing: 0.2vh;
+    font-weight: 300;
+    transition: .3s linear;
+    border: 1px solid rgb(200 200 200);
+    opacity: .6;
+}
+
+.carShowroom .right-panel #test:hover {
+    background: rgb(158, 119, 208, 0.26);
+    opacity: 1
+}

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+body {
+    margin: 0;
+}
+
+.anunt {
+  position: fixed;
+  top: 12%;
+  right: 13%;
+  width: 370px;
+  height: 110px;
+  padding: 10px;
+  margin-left: -400px;
+  font-weight: bold;
+
+  font-size: 15px;
+  color: white;
+  opacity: 0.90;
+
+  animation: slideAnunt 2s;
+}
+
+.safezone {
+  position: relative;
+  transform: translate(-10%, -8%);
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.224);
+  border-top: 2px solid #ffffff40;
+  border-left: 2px solid #ffffff40;
+  border-right: 2px solid #ffffff40;
+  text-align: right;
+  padding: 5vh;
+  border-radius: 3px;
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.safezone .logo_onetap{
+  opacity: 0.5;
+  position: absolute;
+  top: 70px;
+  right: 90px;
+  justify-content: center;
+}
+
+.safezone taganunt {
+  position:relative;
+  top: -45px;
+  right: 45px;
+  margin: 5px;
+  font: caption;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  padding:5px 5;
+  background-color: #fac16b;
+  box-shadow: 0px 0px 4px 1.5px #f7a830;
+  float: left;
+  border-radius: 5px;
+  color: white;
+}
+
+.safezone telefonjucator {
+  position:relative;
+  top: -37.5px;
+  right: 35.5px;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  margin: 0;
+  text-align: left;
+  max-width: 450;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.safezone mesajulanuntului {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  margin: 0;
+  position: absolute;
+  margin: 0;
+  left: 3.5%;
+  margin-right: -50%;
+  top: 30px;
+  transform: translate(0%, 70%);
+  text-align: left;
+  max-width: 370;
+  max-height: 50px !important;
+}
+
+/* Progressbar anunturi */
+.countdownAnunt{
+  position: absolute;
+  height: 3px;
+  width: 100.5%;
+  background: #ffffff57;
+  border-radius: 15px;
+  top: 98%;
+  left: 0px;
+}
+
+.countdownAnunt .baraColorata_Slide{
+  justify-content: center;
+  position: relative;
+  background-color: #fac16b;
+  box-shadow: 0px 0px 4px 1.5px #ffbe4291;
+  width: 0px;
+  height: 3px;
+  border-radius: 3px;
+  animation: slideLine 10s linear;
+}
+
+@keyframes slideLine{
+  100%{
+    width: 0%;
+  }
+  0%{
+      width: 100%;
+  }
+}
+
+@keyframes slideAnunt{
+  0%{
+    right: 20%;
+    opacity: 0;
+  }
+  100%{
+    right: 13%;
+    opacity: 1;
+  }
+}

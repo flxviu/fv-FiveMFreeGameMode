@@ -1,0 +1,337 @@
+
+body{
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	margin: 0;
+	--backgroundColor:rgba(115,115,115, 0.5);
+	--vehicleList:rgba(16, 16, 16, 0.8);
+	--watercolor:rgb(3, 252, 244);
+
+}
+
+#showroom {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+#main_menu{
+	position: fixed;
+	width:25%;
+	height: 100%;
+}
+
+#stats_menu{
+	position: fixed;
+	right: 0%;
+	width:25% ;
+	height: 100%;
+}
+
+.centered_box_inMenu{
+	position: relative;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	top: 50%;
+	transform: translate(0%,-50%);
+}
+
+.centered_box_inSpecification{
+	position: relative;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	top: 50%;
+	transform: translate(0%,-50%);
+}
+
+
+.sh_header {
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* ===================*/
+/* PARTEA CU MASINILE */
+.sh_vehicles {
+	max-height: 50%;
+	margin-top: 10px;
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow-y: scroll;
+}
+
+
+.sh_vehicles button {
+    border: 1px solid rgba(144, 147, 162, 0.5);
+    background-color: rgb(46, 44, 48,0.5);
+	color: white;
+	padding: 15px 15px;
+	margin-bottom: 5px;
+	text-decoration: none;
+	border-radius: 10px;
+	font-size: 16px;
+	cursor: pointer;
+	width: 95%;
+}
+
+.sh_vehicles button h2 {
+	float: left;
+	color: white;
+	font-size: 13px;
+	margin: 0;
+	border-radius: 10px;
+	text-transform: none;
+}
+
+.sh_vehicles button h3 {
+	margin: 0;
+	float: right;
+	color: white;
+	font-size: 13px;
+	border-radius: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: rgb(165, 215, 90);
+}
+
+
+.sh_vehicles::-webkit-scrollbar {
+	width: 2px;
+  	border-radius: 10px;
+}
+  
+.sh_vehicles::-webkit-scrollbar-track {
+	margin: 12px;
+	background: linear-gradient(
+		to top,
+		rgba(36,36,36, 0.1), 
+		rgba(170, 170, 170, 0.3)
+	);
+  	border-radius: 10px;
+}
+
+.sh_vehicles::-webkit-scrollbar-thumb {
+	background:rgb(0, 129, 127); 
+	border-radius: 10px;
+}
+/* ===================*/
+/* PARTEA CU CULORILE */
+.sh_vehcolors {
+	margin-top: 20px;
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.colors {
+	display: grid;
+	grid-gap:5px;
+	grid-template-columns: auto auto auto auto auto auto auto auto;
+}
+
+.sh_vehcolors button {
+	content:"";
+	outline: none;
+    border: 1px solid rgba(144, 147, 162, 0.5);
+	width: 30px;
+	height: 30px;
+	border-radius: 5px;
+}
+
+/* ===================*/
+
+/* ===================*/
+/* PARTEA CU buy */
+.sh_vehpurchase {
+	height: 10%;
+	margin-top: 10px;
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sh_vehpurchase button {
+	margin: 0;
+    border: 1px solid rgba(144, 147, 162, 0.5);
+    background-color: rgb(46, 44, 48,0.5);
+	color: white;
+	padding: 10px 10px;
+	margin-bottom: 5px;
+	text-decoration: none;
+	font-size: 16px;
+	border-radius: 10px;
+	cursor: pointer;
+	width: 95%;
+}
+
+.sh_vehpurchase button h2 {
+	float: left;
+	color: white;
+	font-size: 13px;
+	margin: 0;
+	border-radius: 10px;
+	text-transform: none;
+}
+
+.sh_vehpurchase button h3 {
+	margin: 0;
+	float: right;
+	color: white;
+	font-size: 13px;
+	border-radius: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: rgb(163, 215, 100);
+}
+
+
+/* ===================*/
+h2 {
+	color:white;
+	text-transform: uppercase;
+	font-size: 15px;
+	font-family: 'open sans',arial,sans-serif;
+	font-weight: 200;
+	margin: 0;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+h1 {
+	margin: 0;
+	color:white;
+	text-transform: uppercase;
+	font-size: 40px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+a {
+	color: rgb(166, 169, 186);
+	font-size: 13px;
+	font-family: 'open sans',arial,sans-serif;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	font-weight: 200;
+}
+
+
+
+
+.drawline {
+	display: flex;
+	align-items: center;
+
+	color: white;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 5px;
+	text-transform: uppercase;
+}
+  
+.drawline::after {
+	content: '';
+	flex: 1;
+	margin-left: 1rem;
+	height: 1px;
+	background: linear-gradient(
+		to left,
+		rgba(36,36,36, 0.1), 
+		white
+	);
+}
+
+
+
+/* PROGRESS BAR */
+
+.info span {
+    display: inline-block;
+    font-size: 15px;
+    color: white;
+    font-family: 'open sans',arial,sans-serif;
+    margin: 10px;
+    font-weight: bold;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+span.left {
+    float: left;
+}
+
+span.right {
+    float: right;
+    font-weight: 600;
+	color: rgb(163, 215, 100);
+
+}
+  
+.progress-bar {
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0px;
+    width: 100%;
+    height: 6px;
+    background-color: #ffffff1a;
+    border-radius: 2px;
+}
+
+.progress-bar-size {
+	background-color:rgb(6, 197, 191);
+	width: 0%;
+	height:100%;
+	transition: 0.2s;
+}
+
+.progress-bar-size span{
+	content: "";
+	position: fixed;
+	width: 10px;
+	height: 10px;
+	margin-top: -2px;
+	background-color:rgb(5, 165, 168);
+	border-radius: 2px;
+	transition: 0.2s;
+}
+
+button {
+	transition: 0.2s;
+	outline: none;
+	border-radius: 10px;
+	
+}
+
+button:hover {
+	background-color:rgb(2, 174, 168);
+	border-radius: 10px;
+}
+button#buy:hover {
+	background-color:rgb(163, 215, 100);
+	border-radius: 10px;
+}
+
+
+#timeRemaining {
+	position: fixed;
+	bottom: 2%;
+	color: white;
+	right:15%;
+	font-size: 25px;
+	font-family: 'open sans',arial,sans-serif;
+	transform: skewY(-5deg);
+	padding: 5px;
+	border-radius:5px;
+	background: linear-gradient(
+		to right,
+		rgb(12, 124, 122) -50%, 
+		transparent
+	  );
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}

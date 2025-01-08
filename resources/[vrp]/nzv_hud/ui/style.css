@@ -1,0 +1,674 @@
+/* Designed by @combrands */
+/* Coded by plesalex100  */
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    --colBlue: #2f6800;
+    --colGreen: #b3ff17;
+    --colWhite: #fafafa;
+
+    --colBlack: #252525;
+}
+
+/* Speedometer */
+
+@font-face {
+    /* Speed */
+    font-family: BlackoutSunrise;
+    src: url('fonts/BlackoutSunrise.ttf') format('truetype');
+}
+
+@font-face {
+    /* Utility */
+    font-family: GoghExtraBold;
+    src: url('fonts/GoghExtraBold.otf') format('opentype');
+}
+
+@font-face {
+    /* Gear */
+    font-family: TungstenBold;
+    src: url('fonts/TungstenBold.ttf') format('truetype');
+}
+
+#speedometer {
+    --gearWidth: 28%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+@keyframes odometer-show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: .9;
+    }
+}
+
+@keyframes rpmBar-show-1 {
+    from {
+        transform: translateX(400%) translateY(10vh) skewX(-30deg) scaleX(95%);
+    }
+
+    to {
+        transform: translateX(0%) translateY(10vh) skewX(-30deg) scaleX(95%);
+    }
+}
+
+@keyframes rpmBar-show-2 {
+    from {
+        transform: translateX(0%) translateY(10vh) skewX(-30deg) scaleX(95%);
+        margin-left: 0%;
+    }
+
+    to {
+        transform: translateX(0%) translateY(0%) skewX(-30deg) scaleX(100%);
+        margin-left: 8%;
+    }
+}
+
+@keyframes speed-show {
+    to {
+        clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+}
+
+@keyframes gear-show-1 {
+    from {
+        transform: scaleY(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+@keyframes gear-show-2 {
+    from {
+        opacity: 0;
+        transform: skewX(0deg) translateX(-2%);
+    }
+
+    to {
+        opacity: 1;
+        transform: skewX(-10deg) translateX(-2%);
+    }
+}
+
+@keyframes gear-switch {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(.9);
+    }
+}
+
+@keyframes utility-show {
+    from {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+#speedometer>.container {
+    position: absolute;
+    right: 0;
+    bottom: 2vh;
+
+    aspect-ratio: 33 / 20;
+    height: 18vh;
+    user-select: none;
+}
+
+#speedometer>.container>.rpm-section {
+    height: 13%;
+    width: calc(103% - var(--gearWidth));
+
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+#speedometer>.container>.rpm-section>#odometer {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    text-align: right;
+    font-family: GoghExtraBold;
+    font-size: 1.3vh;
+    color: var(--colWhite);
+    text-shadow: 0 0 .5vh rgba(0, 0, 0, .6);
+    animation: odometer-show 400ms 900ms ease both;
+    transform: skewX(-10deg);
+}
+
+#speedometer>.container>.speed-section {
+    height: 65%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: calc(100% - var(--gearWidth)) var(--gearWidth);
+    align-items: end;
+}
+
+#speedometer>.container>.utility-section {
+    height: 22%;
+    width: calc(110% - var(--gearWidth));
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#speedometer>.container>.rpm-section>.rpm-bar {
+    position: relative;
+    width: 100%;
+    height: 30%;
+    --rpmWidth: 0%;
+
+    transform-origin: left center;
+
+    background-size: 200% 100%;
+    background-position-x: calc(100% - var(--rpmWidth));
+    background-image: linear-gradient(to right, var(--colBlue) 49%, var(--colWhite) 49.5%, var(--colWhite) 50%);
+    /* transition: background-position-x 300ms ease; */
+
+    animation:
+        rpmBar-show-1 400ms ease forwards,
+        rpmBar-show-2 400ms 500ms ease forwards;
+}
+
+#speedometer>.container>.rpm-section>.rpm-bar::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(.7vh) saturate(2) opacity(.5);
+}
+
+#speedometer>.container>.speed-section>.speed {
+    padding-left: 4%;
+    font-family: BlackoutSunrise;
+    line-height: 95%;
+    font-size: 13vh;
+    color: var(--colWhite);
+    /* text-shadow: 0 0 .6vh var(--colBlue), 0 0 .6vh var(--colGreen); */
+    text-shadow: 0 0 .5vh rgba(0, 0, 0, .6);
+    transform: skewX(-10deg);
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    animation: speed-show 400ms 500ms ease forwards;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: end;
+}
+
+#speedometer>.container>.speed-section>.speed>span {
+    display: block;
+}
+
+#speedometer>.container>.speed-section>.gear {
+    background-color: red;
+    font-family: TungstenBold;
+    font-size: 5vh;
+    color: var(--colWhite);
+    position: relative;
+    border-radius: .5vh;
+    margin-bottom: 20%;
+    background-image: linear-gradient(210deg, var(--colBlue), var(--colWhite));
+    height: 40%;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: gear-show-1 300ms 400ms ease backwards;
+}
+
+#speedometer>.container>.speed-section>.gear.anim {
+    animation: gear-show-1 300ms 400ms ease backwards, gear-switch 200ms ease;
+}
+
+#speedometer>.container>.speed-section>.gear>span {
+    display: block;
+    text-shadow: 0 0 .5vh rgba(0, 0, 0, .3);
+    opacity: 0;
+    animation: gear-show-2 300ms 600ms ease forwards;
+}
+
+#speedometer>.container>.speed-section>.gear::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(.9vh) saturate(2) opacity(.4);
+}
+
+#speedometer>.container>.utility-section>div {
+    height: 100%;
+    width: 30%;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5%;
+
+    animation: utility-show 400ms 500ms ease backwards;
+}
+
+#speedometer>.container>.utility-section>div>i>svg {
+    height: 50%;
+    fill: var(--colWhite);
+    transition: fill 300ms ease;
+}
+
+#speedometer>.container>.utility-section>div.active>i>svg {
+    fill: var(--fillCol);
+}
+
+#speedometer>.container>.utility-section>div>i {
+    aspect-ratio: 1;
+    height: 60%;
+    border-radius: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#speedometer>.container>.utility-section>div>span {
+    font-family: GoghExtraBold;
+    color: var(--colWhite);
+    font-size: 1.5vh;
+    text-shadow: 0 0 .5vh rgba(0, 0, 0, .3);
+}
+
+#speedometer>.container>.left-container {
+    left: 0;
+    position: absolute;
+    width: 3vw;
+    height: 100%;
+    transform: translateX(-100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .2vh;
+    animation: odometer-show 400ms 500ms ease backwards;
+}
+
+#speedometer>.container>.left-container>div {
+    width: 100%;
+    height: 3vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: GoghExtraBold;
+    color: #fafafa;
+    text-shadow: 0 0 .5vh rgba(0, 0, 0, .6);
+}
+
+#speedometer>.container>.left-container>div>i {
+    position: relative;
+    height: 2vh;
+    filter: drop-shadow(0 0 .5vh rgba(0, 0, 0, .6));
+}
+
+#speedometer>.container>.left-container>div>i>svg {
+    fill: #fafafa;
+}
+
+#speedometer>.container>.left-container>div.active>i>svg {
+    fill: var(--fillCol);
+}
+
+/* END Speedometer */
+
+/* Main HUD */
+
+@font-face {
+    font-family: Xenosphere;
+    src: url("fonts/Xenosphere.ttf") format("truetype");
+}
+
+#main {
+    position: absolute;
+
+    top: 0;
+    right: 5vh;
+    width: 40vh;
+    height: 18vh;
+
+    font-family: GoghExtraBold;
+}
+
+#main > video {
+    aspect-ratio: 1;
+    position: absolute;
+    top: 0;
+    right: -20%;
+    height: 100%;
+    transform: scale(1.2);
+    z-index: 1;
+}
+
+#main > .container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+#main > .container > .main-container {
+    position: relative;
+    box-sizing: border-box;
+    padding-right: 20%;
+    width: 100%;
+    height: 44%;
+    background-image: linear-gradient(
+        300deg,
+        var(--colBlack) 0%,
+        var(--colBlack) 40%,
+        transparent 90%
+    );
+
+    display: grid;
+    align-content: center;
+    grid-template-rows: 40% 40%;
+    gap: 7%;
+}
+
+#main > .container > .main-container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 6%;
+    top: -3%;
+    background-image: linear-gradient(
+        300deg,
+        var(--colBlue) 0,
+        var(--colBlue) 40%,
+        transparent 85%
+    );
+}
+#main>.container>.main-container::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 6%;
+    bottom: -3%;
+    background-image: linear-gradient(300deg,
+            var(--colBlue) 0,
+            var(--colBlue) 50%,
+            transparent 90%);
+}
+
+#main > .container > .main-container > div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#main > .container > .main-container > div > .time {
+    color: var(--colWhite);
+    font-size: 4vh;
+    padding-inline: 1.3vw;
+    font-family: Xenosphere;
+    text-align: right;
+    text-shadow: 0 0 .5vh rgba(0, 0, 0, .3);
+    transform: translateY(-0.1vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main > .container > .main-container > div > .right-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 85%;
+}
+
+#main > .container > .main-container > div > .right-col > .date {
+    color: var(--colWhite);
+    font-style: italic;
+    line-height: 1.5vh;
+    margin-left: .4vw;
+}
+
+#main > .container > .main-container > div > .right-col > .players {
+    color: var(--colWhite);
+    font-style: italic;
+    font-size: 1.8vh;
+    line-height: 1.5vh;
+    display: inline;
+}
+
+#main > .container > .main-container > div > .right-col > .players > i {
+    color: var(--colBlue);
+    transform: scale(.8);
+}
+
+#main > .container > .main-container > div.big-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    min-width: 85%;
+    margin-left: auto;
+    font-size: .7vw;
+    gap: .4vw;
+}
+
+#main > .container > .main-container > div.big-icons > div {
+    height: 100%;
+    color: var(--colWhite);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .1vw;
+}
+
+#main > .container > .main-container > div.big-icons > div > i {
+    background-color: var(--colBlue);
+    color: #2f2f2f;
+    aspect-ratio: 1;
+    height: 80%;
+    border-radius: 100%;
+    font-size: .9vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: .3vh;
+}
+
+#main > .container > .main-container > .bars {
+    position: absolute;
+    box-sizing: border-box;
+    
+    bottom: 0;
+    transform: translateY(100%);
+    padding-right: 20%;
+
+    height: 45%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4%;
+}
+
+#main > .container > .main-container > .bars > .bar {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main > .container > .main-container > .bars > .bar > .bar-fill {
+    --value: 100%;
+
+    width: 100%;
+    height: 35%;
+    background-image: linear-gradient(to left, var(--accent) 0%, var(--accent) var(--value), transparent var(--value), transparent 100%);
+    /* background-color: var(--accent); */
+    transform: skewX(-30deg);
+}
+
+#main > .container > .main-container > .bars > .bar > .bar-fill::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    filter: blur(4px) opacity(.5);
+}
+
+#main > .container > .main-container > .bars > .bar > #user-health {
+    --accent: var(--colGreen);
+}
+#main > .container > .main-container > .bars > .bar > #user-armour {
+    --accent: var(--colBlue);
+}
+
+#main > .container > .main-container > .bars > .bar > .bar-icon {
+    color: var(--colWhite);
+    font-size: 1.7vh;
+    padding: .1vh .5vh;
+    transform: skewX(-30deg);
+    background-color: #2f2f2f;
+}
+
+#main > .container > .main-container > .bars > .bar > .bar-icon > i {
+    transform: skewX(30deg);
+    margin-left: .2vh;
+}
+
+/* END Main HUD */
+
+/* START Missions */
+
+
+@keyframes missions-show {
+    from {
+        opacity: 0;
+        transform: translateX(2vw);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#missions {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#missions > .container {
+    width: 15vw;
+    min-height: 5vh;
+
+    position: absolute;
+    top: 15vh;
+    right: 4vw;
+
+
+    box-sizing: border-box;
+    padding-inline: 1vw;
+    padding-block: .4vh;
+
+    background-image: linear-gradient(300deg, 
+        transparent 12%,
+        var(--colBlack) 35%,
+        var(--colBlack) 55%,
+        transparent 87%
+    );
+
+    color: var(--colWhite);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    animation: missions-show 400ms 200ms ease-out both;
+}
+
+#missions > .container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: .3vh;
+    left: 3%;
+    top: -.3vh;
+    background-image: linear-gradient(
+        300deg,
+        transparent 0,
+        var(--colBlue) 40%,
+        var(--colBlue) 60%,
+        transparent 100%
+    );
+    animation: missions-show 700ms ease both;
+}
+
+#missions > .container::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: .3vh;
+    right: 8%;
+    bottom: -.3vh;
+    background-image: linear-gradient(
+        300deg,
+        transparent 0,
+        var(--colBlue) 35%,
+        var(--colBlue) 55%,
+        transparent 100%
+    );
+    animation: missions-show 800ms 50ms ease both;
+}
+
+#missions > .container > .title {
+    animation: missions-show 900ms 100ms ease-out backwards;
+    font-family: GoghExtraBold;
+    font-size: 1.2vh;
+}
+
+#missions > .container > .msg {
+    animation: missions-show 800ms 200ms ease-out backwards;
+    font-family: sans-serif;
+    font-size: 1.1vh;
+    opacity: .9;
+}
+
+#missions > .container > .msg > p {
+    margin: 0;
+}
+
+ 
+/* END Missions */

@@ -1,0 +1,65 @@
+Config = {}
+
+Config.MinCops = 0 -- Amount of cops required to start heist
+Config.mincash = 100 -- Minimum amount of cash a pile holds
+Config.maxcash = 300 -- Maximum amount of cash a pile can hold
+Config.enablesound = true -- Enables bank alarm sound
+Config.cooldown = 3600 -- Amount of time to do the heist again in Seconds Default: (30min)
+Config.vaulttime = 120 -- Amount of time to vault door close
+
+Config.items = { -- Items
+	thermal = "thermal_charge",
+	laptop = "laptop_h",
+	lockpick = "lockpick",
+	id_card = "id_card",
+	diamond = "dia_box",
+	gold = "gold_bar",
+	dirty_money = "dirty_money"
+}
+
+Config.text = { -- Texts
+	loudstart = "Apasa [~r~E~w~] pentru a incepe jaful ~g~AGRESIV",
+	silentstart = "Apasa [~r~E~w~] pentru a incepe jaful ~g~SILENTIOS",
+	usecard = "Apasa [~r~E~w~] pentru a folosi cartea de identitate",
+	usethermal = "Apasa [~r~E~w~] pentru a folosi thermal charge-ul",
+	usehack = "Apasa [~r~E~w~] pentru a hackui panoul de securitate",
+	uselockpick = "Apasa [~r~E~w~] pentru lockpick",
+	usesearch = "Apasa [~r~E~w~] pentru a cauta",
+	lootcash= "Apasa [~r~E~w~] pentru a loota cartul cu bani",
+	lootgold = "Apasa [~r~E~w~] pentru a loota cartul cu aur",
+	lootdia = "Apasa [~r~E~w~] pentru a loota cartul cu diamante",
+	card = "Folosind cartea de identitate",
+	thermal = "Plantand themral charge-ul",
+	burning = "Topind incuietoarea",
+	lockpick = "Spargand incuietoarea",
+	using = "Se proceseaza panoul",
+	used = "Procesare completa.",
+	stage_complete = "Completat.",
+	stage = "Pasul",
+	search = "Cautand",
+	hacking = "Hackuind",
+	melted = "Incuietoarea usii topita.",
+	hacked = "Hackuire completa.",
+	unlocked = "~g~Usa descuiata.",
+	nothing = "~r~Nu s-a gasit nimic.",
+	found = "~g~Ai gasit cartea de identitate.",
+	time = "Timp ramas: ",
+	hackconnect = "Deschide laptopul si navigheaza la HackConnect.exe",
+	ip = "Gaseste adresa IP...",
+	password = "Gaseste parola secreta...",
+	bruteforce = "Ruleaza BruteForce.exe",
+	vaulttime = "Ai "..Config.vaulttime.." secunde pana la declansarea gazului toxic.",
+	vaultclose = "Usa seifului se va inchide in 60 secunde!",
+	vaultclose2 = "~r~USA SEIFULUI SE INCHIDE!",
+	stole = "Ai furat",
+	unlockdoor = "Apasa [~r~E~w~] pentru a descuia usa",
+	lockdoor = "Apasa [~r~E~w~] pentru a incuia usa",
+	nolaptop = "~r~Nu ai un paptop de hackuit.",
+	noidcard = "~r~Nu ai o carte de identitate.",
+	nothermal = "~r~Nu ai nici un thermal charge.",
+	nolockpick = "~r~Nu ai nici o descuietoare.",
+	mincops = "Trebuie sa fie minim "..Config.MinCops.." politisti/jandarmi in oras pentru a da spargerea.",
+	timeleft = "Timp ramas pana la repararea bancii.",
+	alreadyrobbed = "Banca este deja in curs de jefuire.",
+	syshack = "Hackuind sistemul..."
+}
